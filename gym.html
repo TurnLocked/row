@@ -78,15 +78,262 @@ const CONFIG = {
   // First-run defaults. Once a user logs anything, they edit through
   // the in-app + / gear buttons; this block stays as the seed.
   defaultExercises: [
-    { name: "Bench press",     gym: "comm", day: "push", repMin: 5, repMax: 8,  step: 2.5, startWeight: 60 },
-    { name: "Overhead press",  gym: "comm", day: "push", repMin: 5, repMax: 8,  step: 2.5, startWeight: 35 },
+    { name: "Barbell bench press", gym: "comm", day: "push", repMin: 5, repMax: 8, step: 2.5, startWeight: 60 },
+    { name: "Dumbbell bench press", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 25 },
+    { name: "Incline barbell bench", gym: "comm", day: "push", repMin: 5, repMax: 8, step: 2.5, startWeight: 50 },
+    { name: "Incline dumbbell press", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 22 },
+    { name: "Decline barbell bench", gym: "comm", day: "push", repMin: 5, repMax: 8, step: 2.5, startWeight: 55 },
+    { name: "Decline dumbbell press", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 22 },
+    { name: "Close-grip bench press", gym: "comm", day: "push", repMin: 5, repMax: 8, step: 2.5, startWeight: 50 },
+    { name: "Wide-grip bench press", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 45 },
+    { name: "Floor press", gym: "comm", day: "push", repMin: 5, repMax: 8, step: 2.5, startWeight: 55 },
+    { name: "Board press", gym: "comm", day: "push", repMin: 3, repMax: 6, step: 2.5, startWeight: 70 },
+    { name: "Smith machine bench", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 50 },
+    { name: "Machine chest press", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 40 },
+    { name: "Hammer strength chest", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 35 },
+    { name: "Cable chest press", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 25 },
+    { name: "Chest dip", gym: "both", day: "push", repMin: 5, repMax: 10, step: 2.5, startWeight: 0, bw: true },
+    { name: "Weighted dip", gym: "comm", day: "push", repMin: 5, repMax: 8, step: 2.5, startWeight: 10 },
+    { name: "Push-up", gym: "both", day: "push", repMin: 10, repMax: 20, step: 5, startWeight: 0, bw: true },
+    { name: "Weighted push-up", gym: "comm", day: "push", repMin: 6, repMax: 12, step: 2.5, startWeight: 10 },
+    { name: "Diamond push-up", gym: "both", day: "push", repMin: 8, repMax: 15, step: 5, startWeight: 0, bw: true },
+    { name: "Archer push-up", gym: "both", day: "push", repMin: 5, repMax: 10, step: 5, startWeight: 0, bw: true },
+    { name: "Clap push-up", gym: "both", day: "push", repMin: 5, repMax: 10, step: 5, startWeight: 0, bw: true },
+    { name: "Barbell overhead press", gym: "comm", day: "push", repMin: 5, repMax: 8, step: 2.5, startWeight: 35 },
+    { name: "Dumbbell shoulder press", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 16 },
+    { name: "Seated barbell press", gym: "comm", day: "push", repMin: 5, repMax: 8, step: 2.5, startWeight: 40 },
+    { name: "Seated dumbbell press", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 18 },
+    { name: "Arnold press", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 14 },
+    { name: "Push press", gym: "comm", day: "push", repMin: 3, repMax: 6, step: 5, startWeight: 45 },
+    { name: "Military press", gym: "comm", day: "push", repMin: 5, repMax: 8, step: 2.5, startWeight: 35 },
+    { name: "Landmine press", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 30 },
+    { name: "Single-arm dumbbell press", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 16 },
+    { name: "Machine shoulder press", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 30 },
+    { name: "Smith machine OHP", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 35 },
+    { name: "Lateral raise", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 8 },
+    { name: "Dumbbell lateral raise", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 8 },
+    { name: "Cable lateral raise", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 10 },
+    { name: "Machine lateral raise", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 2.5, startWeight: 15 },
+    { name: "Seated lateral raise", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 8 },
+    { name: "Lean-away lateral raise", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 8 },
+    { name: "Partials lateral raise", gym: "comm", day: "push", repMin: 12, repMax: 20, step: 1, startWeight: 6 },
+    { name: "Front raise", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 10 },
+    { name: "Dumbbell front raise", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 10 },
+    { name: "Barbell front raise", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 15 },
+    { name: "Cable front raise", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 10 },
+    { name: "Plate front raise", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 10 },
+    { name: "Rear delt fly", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 8 },
+    { name: "Dumbbell rear delt fly", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 8 },
+    { name: "Machine rear delt fly", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 2.5, startWeight: 15 },
+    { name: "Cable rear delt fly", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 10 },
+    { name: "Bent-over rear delt raise", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 8 },
+    { name: "Face pull", gym: "comm", day: "push", repMin: 12, repMax: 20, step: 2.5, startWeight: 15 },
+    { name: "Rope face pull", gym: "comm", day: "push", repMin: 12, repMax: 20, step: 2.5, startWeight: 15 },
+    { name: "Band face pull", gym: "both", day: "push", repMin: 15, repMax: 25, step: 5, startWeight: 0 },
+    { name: "Reverse pec deck", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 2.5, startWeight: 20 },
     { name: "Tricep pushdown", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 25 },
-    { name: "Pull-ups",        gym: "both", day: "pull", repMin: 5, repMax: 10, step: 1,   startWeight: 0, bw: true },
-    { name: "Barbell row",     gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 50 },
-    { name: "Bicep curl",      gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 1.25,startWeight: 15 },
-    { name: "Back squat",      gym: "comm", day: "legs", repMin: 5, repMax: 8,  step: 5,   startWeight: 80 },
-    { name: "Romanian deadlift", gym: "comm", day: "legs", repMin: 6, repMax: 10, step: 5, startWeight: 60 },
-    { name: "Leg press",       gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5,   startWeight: 100 }
+    { name: "Rope pushdown", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 2.5, startWeight: 20 },
+    { name: "Bar pushdown", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 25 },
+    { name: "V-bar pushdown", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 25 },
+    { name: "Reverse grip pushdown", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 2.5, startWeight: 20 },
+    { name: "Single-arm pushdown", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 12 },
+    { name: "Tricep extension", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 20 },
+    { name: "Overhead tricep extension", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 20 },
+    { name: "Dumbbell overhead extension", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 16 },
+    { name: "Cable overhead extension", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 2.5, startWeight: 18 },
+    { name: "Rope overhead extension", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 2.5, startWeight: 18 },
+    { name: "Skull crusher", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 30 },
+    { name: "Barbell skull crusher", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 30 },
+    { name: "Dumbbell skull crusher", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 14 },
+    { name: "EZ-bar skull crusher", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 25 },
+    { name: "Close-grip EZ-bar extension", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 25 },
+    { name: "Tricep dip", gym: "both", day: "push", repMin: 6, repMax: 12, step: 2.5, startWeight: 0, bw: true },
+    { name: "Bench dip", gym: "both", day: "push", repMin: 8, repMax: 15, step: 5, startWeight: 0, bw: true },
+    { name: "Weighted bench dip", gym: "comm", day: "push", repMin: 6, repMax: 10, step: 2.5, startWeight: 10 },
+    { name: "Tricep kickback", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 8 },
+    { name: "Dumbbell kickback", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 8 },
+    { name: "Cable kickback", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 1, startWeight: 10 },
+    { name: "Tricep pullover", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 20 },
+    { name: "Cable pullover", gym: "comm", day: "push", repMin: 10, repMax: 15, step: 2.5, startWeight: 20 },
+    { name: "Dumbbell pullover", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 16 },
+    { name: "JM press", gym: "comm", day: "push", repMin: 5, repMax: 8, step: 2.5, startWeight: 40 },
+    { name: "Tate press", gym: "comm", day: "push", repMin: 8, repMax: 12, step: 2.5, startWeight: 14 },
+    { name: "Sphinx push-up", gym: "both", day: "push", repMin: 6, repMax: 12, step: 5, startWeight: 0, bw: true },
+    { name: "Pull-up", gym: "both", day: "pull", repMin: 5, repMax: 10, step: 1, startWeight: 0, bw: true },
+    { name: "Chin-up", gym: "both", day: "pull", repMin: 5, repMax: 10, step: 1, startWeight: 0, bw: true },
+    { name: "Weighted pull-up", gym: "comm", day: "pull", repMin: 3, repMax: 8, step: 2.5, startWeight: 10 },
+    { name: "Weighted chin-up", gym: "comm", day: "pull", repMin: 3, repMax: 8, step: 2.5, startWeight: 10 },
+    { name: "Wide-grip pull-up", gym: "both", day: "pull", repMin: 5, repMax: 10, step: 1, startWeight: 0, bw: true },
+    { name: "Close-grip pull-up", gym: "both", day: "pull", repMin: 5, repMax: 10, step: 1, startWeight: 0, bw: true },
+    { name: "Neutral-grip pull-up", gym: "both", day: "pull", repMin: 5, repMax: 10, step: 1, startWeight: 0, bw: true },
+    { name: "Commando pull-up", gym: "both", day: "pull", repMin: 5, repMax: 10, step: 1, startWeight: 0, bw: true },
+    { name: "Archer pull-up", gym: "both", day: "pull", repMin: 3, repMax: 6, step: 1, startWeight: 0, bw: true },
+    { name: "Typewriter pull-up", gym: "both", day: "pull", repMin: 3, repMax: 6, step: 1, startWeight: 0, bw: true },
+    { name: "Muscle-up", gym: "both", day: "pull", repMin: 1, repMax: 5, step: 1, startWeight: 0, bw: true },
+    { name: "Lat pulldown", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 40 },
+    { name: "Wide-grip lat pulldown", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 40 },
+    { name: "Close-grip lat pulldown", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 40 },
+    { name: "Neutral-grip lat pulldown", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 40 },
+    { name: "Reverse-grip lat pulldown", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 35 },
+    { name: "V-bar lat pulldown", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 40 },
+    { name: "Rope lat pulldown", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 2.5, startWeight: 35 },
+    { name: "Single-arm lat pulldown", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 25 },
+    { name: "Kneeling lat pulldown", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 35 },
+    { name: "Barbell row", gym: "comm", day: "pull", repMin: 5, repMax: 8, step: 2.5, startWeight: 50 },
+    { name: "Pendlay row", gym: "comm", day: "pull", repMin: 3, repMax: 6, step: 5, startWeight: 50 },
+    { name: "Bent-over barbell row", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 50 },
+    { name: "Yates row", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 50 },
+    { name: "Dumbbell row", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 22 },
+    { name: "Single-arm dumbbell row", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 22 },
+    { name: "Chest-supported dumbbell row", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 20 },
+    { name: "Incline dumbbell row", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 18 },
+    { name: "T-bar row", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 40 },
+    { name: "Landmine row", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 35 },
+    { name: "Meadows row", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 30 },
+    { name: "Seated cable row", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 40 },
+    { name: "Close-grip seated row", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 40 },
+    { name: "Wide-grip seated row", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 40 },
+    { name: "V-bar seated row", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 40 },
+    { name: "Rope seated row", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 2.5, startWeight: 35 },
+    { name: "Reverse-grip seated row", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 35 },
+    { name: "Single-arm cable row", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 25 },
+    { name: "Machine row", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 35 },
+    { name: "Hammer strength row", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 35 },
+    { name: "Deadlift", gym: "comm", day: "pull", repMin: 3, repMax: 6, step: 5, startWeight: 80 },
+    { name: "Conventional deadlift", gym: "comm", day: "pull", repMin: 1, repMax: 5, step: 5, startWeight: 80 },
+    { name: "Sumo deadlift", gym: "comm", day: "pull", repMin: 1, repMax: 5, step: 5, startWeight: 80 },
+    { name: "Romanian deadlift", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 5, startWeight: 60 },
+    { name: "Stiff-leg deadlift", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 5, startWeight: 60 },
+    { name: "Dumbbell Romanian deadlift", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 22 },
+    { name: "Single-leg Romanian deadlift", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 16 },
+    { name: "Deficit deadlift", gym: "comm", day: "pull", repMin: 3, repMax: 6, step: 5, startWeight: 70 },
+    { name: "Rack pull", gym: "comm", day: "pull", repMin: 3, repMax: 6, step: 5, startWeight: 90 },
+    { name: "Block pull", gym: "comm", day: "pull", repMin: 3, repMax: 6, step: 5, startWeight: 90 },
+    { name: "Trap bar deadlift", gym: "comm", day: "pull", repMin: 3, repMax: 6, step: 5, startWeight: 80 },
+    { name: "Hex bar deadlift", gym: "comm", day: "pull", repMin: 3, repMax: 6, step: 5, startWeight: 80 },
+    { name: "Good morning", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 5, startWeight: 40 },
+    { name: "Seated good morning", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 35 },
+    { name: "Reverse hyperextension", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 5, startWeight: 20 },
+    { name: "Back extension", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 5, startWeight: 0, bw: true },
+    { name: "Weighted back extension", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 10 },
+    { name: "Hyperextension", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 5, startWeight: 0, bw: true },
+    { name: "Weighted hyperextension", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 10 },
+    { name: "Superman hold", gym: "both", day: "pull", repMin: 20, repMax: 40, step: 10, startWeight: 0, bw: true },
+    { name: "Barbell shrug", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 5, startWeight: 40 },
+    { name: "Dumbbell shrug", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 2.5, startWeight: 20 },
+    { name: "Trap bar shrug", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 5, startWeight: 60 },
+    { name: "Behind-the-back shrug", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 5, startWeight: 40 },
+    { name: "Cable shrug", gym: "comm", day: "pull", repMin: 12, repMax: 20, step: 2.5, startWeight: 30 },
+    { name: "Bicep curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 1.25, startWeight: 15 },
+    { name: "Barbell curl", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 25 },
+    { name: "EZ-bar curl", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 25 },
+    { name: "Dumbbell curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 1.25, startWeight: 12 },
+    { name: "Alternating dumbbell curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 1.25, startWeight: 12 },
+    { name: "Hammer curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 1.25, startWeight: 12 },
+    { name: "Cross-body hammer curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 1.25, startWeight: 12 },
+    { name: "Preacher curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 20 },
+    { name: "Machine preacher curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 20 },
+    { name: "Spider curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 1.25, startWeight: 12 },
+    { name: "Incline dumbbell curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 1.25, startWeight: 12 },
+    { name: "Seated dumbbell curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 1.25, startWeight: 12 },
+    { name: "Concentration curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 1.25, startWeight: 12 },
+    { name: "Cable curl", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 1.25, startWeight: 15 },
+    { name: "Rope cable curl", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 1.25, startWeight: 15 },
+    { name: "Bar cable curl", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 1.25, startWeight: 15 },
+    { name: "Reverse curl", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 1.25, startWeight: 12 },
+    { name: "Barbell reverse curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 20 },
+    { name: "Dumbbell reverse curl", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 1.25, startWeight: 10 },
+    { name: "Zottman curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 1.25, startWeight: 12 },
+    { name: "Drag curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 2.5, startWeight: 20 },
+    { name: "Cheat curl", gym: "comm", day: "pull", repMin: 5, repMax: 8, step: 2.5, startWeight: 30 },
+    { name: "21s", gym: "comm", day: "pull", repMin: 7, repMax: 7, step: 2.5, startWeight: 20 },
+    { name: "Plate curl", gym: "comm", day: "pull", repMin: 10, repMax: 15, step: 1, startWeight: 10 },
+    { name: "Towel curl", gym: "comm", day: "pull", repMin: 8, repMax: 12, step: 1.25, startWeight: 12 },
+    { name: "Fat bar curl", gym: "comm", day: "pull", repMin: 6, repMax: 10, step: 2.5, startWeight: 20 },
+    { name: "Wrist curl", gym: "comm", day: "pull", repMin: 12, repMax: 20, step: 1, startWeight: 15 },
+    { name: "Reverse wrist curl", gym: "comm", day: "pull", repMin: 12, repMax: 20, step: 1, startWeight: 12 },
+    { name: "Behind-the-back wrist curl", gym: "comm", day: "pull", repMin: 12, repMax: 20, step: 1, startWeight: 15 },
+    { name: "Farmer's walk", gym: "comm", day: "pull", repMin: 30, repMax: 60, step: 5, startWeight: 24 },
+    { name: "Back squat", gym: "comm", day: "legs", repMin: 5, repMax: 8, step: 5, startWeight: 80 },
+    { name: "High-bar back squat", gym: "comm", day: "legs", repMin: 5, repMax: 8, step: 5, startWeight: 80 },
+    { name: "Low-bar back squat", gym: "comm", day: "legs", repMin: 3, repMax: 6, step: 5, startWeight: 85 },
+    { name: "Front squat", gym: "comm", day: "legs", repMin: 5, repMax: 8, step: 5, startWeight: 65 },
+    { name: "Zercher squat", gym: "comm", day: "legs", repMin: 5, repMax: 8, step: 5, startWeight: 60 },
+    { name: "Goblet squat", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 20 },
+    { name: "Box squat", gym: "comm", day: "legs", repMin: 3, repMax: 6, step: 5, startWeight: 70 },
+    { name: "Pause squat", gym: "comm", day: "legs", repMin: 3, repMax: 6, step: 5, startWeight: 70 },
+    { name: "Pin squat", gym: "comm", day: "legs", repMin: 3, repMax: 6, step: 5, startWeight: 70 },
+    { name: "Anderson squat", gym: "comm", day: "legs", repMin: 1, repMax: 5, step: 5, startWeight: 70 },
+    { name: "Safety bar squat", gym: "comm", day: "legs", repMin: 5, repMax: 8, step: 5, startWeight: 75 },
+    { name: "Cambered bar squat", gym: "comm", day: "legs", repMin: 5, repMax: 8, step: 5, startWeight: 70 },
+    { name: "Hatfield squat", gym: "comm", day: "legs", repMin: 6, repMax: 10, step: 5, startWeight: 60 },
+    { name: "Overhead squat", gym: "comm", day: "legs", repMin: 5, repMax: 8, step: 2.5, startWeight: 30 },
+    { name: "Squat", gym: "both", day: "legs", repMin: 10, repMax: 20, step: 5, startWeight: 0, bw: true },
+    { name: "Pistol squat", gym: "both", day: "legs", repMin: 3, repMax: 8, step: 1, startWeight: 0, bw: true },
+    { name: "Shrimp squat", gym: "both", day: "legs", repMin: 5, repMax: 10, step: 1, startWeight: 0, bw: true },
+    { name: "Sissy squat", gym: "both", day: "legs", repMin: 8, repMax: 15, step: 5, startWeight: 0, bw: true },
+    { name: "Leg press", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 100 },
+    { name: "45-degree leg press", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 100 },
+    { name: "Horizontal leg press", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 80 },
+    { name: "Single-leg press", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 50 },
+    { name: "Wide-stance leg press", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 90 },
+    { name: "Close-stance leg press", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 90 },
+    { name: "High-foot leg press", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 90 },
+    { name: "Low-foot leg press", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 90 },
+    { name: "Hack squat", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 60 },
+    { name: "Belt squat", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 50 },
+    { name: "Smith machine squat", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 60 },
+    { name: "Lunge", gym: "both", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 0, bw: true },
+    { name: "Walking lunge", gym: "both", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 0, bw: true },
+    { name: "Reverse lunge", gym: "both", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 0, bw: true },
+    { name: "Forward lunge", gym: "both", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 0, bw: true },
+    { name: "Lateral lunge", gym: "both", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 0, bw: true },
+    { name: "Curtsy lunge", gym: "both", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 0, bw: true },
+    { name: "Bulgarian split squat", gym: "both", day: "legs", repMin: 6, repMax: 10, step: 2.5, startWeight: 0, bw: true },
+    { name: "Weighted Bulgarian split squat", gym: "comm", day: "legs", repMin: 6, repMax: 10, step: 2.5, startWeight: 12 },
+    { name: "Split squat", gym: "both", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 0, bw: true },
+    { name: "Step-up", gym: "both", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 0, bw: true },
+    { name: "Weighted step-up", gym: "comm", day: "legs", repMin: 6, repMax: 10, step: 2.5, startWeight: 12 },
+    { name: "Box step-up", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 0, bw: true },
+    { name: "Hip thrust", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 60 },
+    { name: "Barbell hip thrust", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 60 },
+    { name: "Dumbbell hip thrust", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 25 },
+    { name: "Single-leg hip thrust", gym: "both", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 0, bw: true },
+    { name: "Weighted single-leg hip thrust", gym: "comm", day: "legs", repMin: 6, repMax: 10, step: 2.5, startWeight: 12 },
+    { name: "Glute bridge", gym: "both", day: "legs", repMin: 12, repMax: 20, step: 5, startWeight: 0, bw: true },
+    { name: "Weighted glute bridge", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 40 },
+    { name: "Single-leg glute bridge", gym: "both", day: "legs", repMin: 10, repMax: 15, step: 5, startWeight: 0, bw: true },
+    { name: "Kas glute bridge", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 50 },
+    { name: "Machine hip thrust", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 5, startWeight: 50 },
+    { name: "Cable pull-through", gym: "comm", day: "legs", repMin: 10, repMax: 15, step: 2.5, startWeight: 25 },
+    { name: "Leg curl", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 30 },
+    { name: "Lying leg curl", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 30 },
+    { name: "Seated leg curl", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 30 },
+    { name: "Standing leg curl", gym: "comm", day: "legs", repMin: 10, repMax: 15, step: 2.5, startWeight: 20 },
+    { name: "Single-leg curl", gym: "comm", day: "legs", repMin: 8, repMax: 12, step: 2.5, startWeight: 15 },
+    { name: "Nordic curl", gym: "both", day: "legs", repMin: 3, repMax: 8, step: 1, startWeight: 0, bw: true },
+    { name: "Nordic hamstring curl", gym: "both", day: "legs", repMin: 3, repMax: 8, step: 1, startWeight: 0, bw: true },
+    { name: "Glute-ham raise", gym: "comm", day: "legs", repMin: 5, repMax: 10, step: 5, startWeight: 0, bw: true },
+    { name: "Weighted glute-ham raise", gym: "comm", day: "legs", repMin: 5, repMax: 10, step: 2.5, startWeight: 10 },
+    { name: "Leg extension", gym: "comm", day: "legs", repMin: 10, repMax: 15, step: 2.5, startWeight: 30 },
+    { name: "Single-leg extension", gym: "comm", day: "legs", repMin: 10, repMax: 15, step: 2.5, startWeight: 15 },
+    { name: "Calf raise", gym: "both", day: "legs", repMin: 12, repMax: 20, step: 5, startWeight: 0, bw: true },
+    { name: "Standing calf raise", gym: "comm", day: "legs", repMin: 10, repMax: 15, step: 5, startWeight: 50 },
+    { name: "Seated calf raise", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 5, startWeight: 40 },
+    { name: "Donkey calf raise", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 5, startWeight: 40 },
+    { name: "Leg press calf raise", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 5, startWeight: 80 },
+    { name: "Single-leg calf raise", gym: "both", day: "legs", repMin: 12, repMax: 20, step: 2.5, startWeight: 0, bw: true },
+    { name: "Weighted single-leg calf raise", gym: "comm", day: "legs", repMin: 10, repMax: 15, step: 2.5, startWeight: 12 },
+    { name: "Tibialis raise", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 2.5, startWeight: 10 },
+    { name: "Hip abduction", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 2.5, startWeight: 25 },
+    { name: "Seated hip abduction", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 2.5, startWeight: 25 },
+    { name: "Standing hip abduction", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 2.5, startWeight: 15 },
+    { name: "Cable hip abduction", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 2.5, startWeight: 15 },
+    { name: "Hip adduction", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 2.5, startWeight: 25 },
+    { name: "Seated hip adduction", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 2.5, startWeight: 25 },
+    { name: "Cable hip adduction", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 2.5, startWeight: 15 },
+    { name: "Abductor machine", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 2.5, startWeight: 25 },
+    { name: "Adductor machine", gym: "comm", day: "legs", repMin: 12, repMax: 20, step: 2.5, startWeight: 25 }
   ]
 };
 </script>
@@ -615,6 +862,35 @@ img, video, canvas, svg { max-width: 100%; }
   -webkit-tap-highlight-color: transparent;
 }
 .po-set-row .po-mini-btn:hover { color: var(--bad); }
+
+/* ----- Body stats in settings ----- */
+.po-set-body-stats { display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+.po-set-stat-row { display: flex; align-items: center; gap: 12px; }
+.po-set-stat-row label {
+  flex: 0 0 60px;
+  font-size: 12px; font-weight: 600; color: var(--text-2);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.po-set-stat-input {
+  flex: 1; display: flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+.po-set-stat-input input,
+.po-set-stat-input select {
+  flex: 1; min-width: 0;
+  background: transparent; border: none; outline: none;
+  color: var(--text-1); font-family: inherit; font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.po-set-stat-input select { cursor: pointer; }
+.po-set-stat-input select option { background: var(--bg-card); color: var(--text-1); }
+.po-set-stat-unit {
+  font-size: 11px; color: var(--text-3); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
 .po-add-row-btn {
   width: 100%; margin-top: 6px;
   padding: 10px; background: rgba(255,255,255,0.025);
@@ -1355,6 +1631,26 @@ img, video, canvas, svg { max-width: 100%; }
     </button>
   </div>
 
+  <!-- HEIGHT TRACKER -->
+  <div class="wt-section" id="htSection">
+    <div class="wt-divider"><span>HEIGHT</span></div>
+    <div class="wt-card">
+      <div class="wt-row">
+        <span class="wt-num" id="htNum">—</span>
+        <span class="wt-unit">cm</span>
+      </div>
+      <div class="wt-empty" id="htEmpty">Set your height in Settings.</div>
+      <div class="wt-input-row" id="htInputRow" style="display:none">
+        <div class="wt-input-top">
+          <input type="number" step="0.5" class="wt-input" id="htInput" placeholder="Enter height" inputmode="decimal" aria-label="Your height">
+          <span class="wt-unit-static">cm</span>
+          <button class="wt-save-btn" id="htSaveBtn">Save</button>
+        </div>
+      </div>
+      <button class="wt-edit-btn" id="htEditBtn" style="display:none">Edit</button>
+    </div>
+  </div>
+
   <!-- Progress photos overlay -->
   <div class="wt-overlay" id="wtOverlay" aria-hidden="true">
     <div class="wt-overlay-inner">
@@ -1653,6 +1949,36 @@ img, video, canvas, svg { max-width: 100%; }
     <h3>Settings</h3>
 
     <div class="po-set-section">
+      <h4>Body Stats</h4>
+      <div class="po-set-body-stats">
+        <div class="po-set-stat-row">
+          <label>Weight</label>
+          <div class="po-set-stat-input">
+            <input type="number" id="setBodyWeight" step="0.5" min="30" max="300" placeholder="0">
+            <span class="po-set-stat-unit" id="setBodyWeightUnit">kg</span>
+          </div>
+        </div>
+        <div class="po-set-stat-row">
+          <label>Height</label>
+          <div class="po-set-stat-input">
+            <input type="number" id="setBodyHeight" step="0.5" min="100" max="250" placeholder="0">
+            <span class="po-set-stat-unit">cm</span>
+          </div>
+        </div>
+        <div class="po-set-stat-row">
+          <label>Sex</label>
+          <div class="po-set-stat-input">
+            <select id="setBodySex">
+              <option value="m">Male</option>
+              <option value="f">Female</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button class="po-add-row-btn" id="setSaveBodyStats">Save body stats</button>
+    </div>
+
+    <div class="po-set-section">
       <h4>Units</h4>
       <div class="po-modal-seg" id="setUnitsSeg">
         <button data-u="kg">kg</button>
@@ -1742,6 +2068,7 @@ img, video, canvas, svg { max-width: 100%; }
         index: idx
       };
     }
+    s.bodyStats = s.bodyStats || { weight: null, height: null, sex: 'm' };
     return s;
   }
   function saveState() {
@@ -2024,35 +2351,23 @@ img, video, canvas, svg { max-width: 100%; }
     splitEl.classList.toggle('is-rest', isRestName(split.name));
   }
 
-  // Build the rep buttons based on the current exercise's repMin/repMax.
-  // Always spans repMin → repMax + 2 (a small buffer for over-performing
-  // sets that trigger the upgrade signal), capped at 16 buttons total so
-  // wide ranges don't break the mobile layout.
   function renderRepsRow() {
     const row = document.getElementById('repsRow');
     if (!row) return;
-    const ex = getCurrentEx();
-    let repMin, repMax;
-    if (ex) {
-      repMin = Math.max(1, parseInt(ex.repMin, 10) || 1);
-      repMax = Math.max(repMin, parseInt(ex.repMax, 10) || repMin);
-    } else {
-      repMin = 4; repMax = 12;
-    }
-    const upper = Math.max(repMax + 2, repMin + 5);
-    const end = Math.min(upper, repMin + 15);
-
-    // Preserve the previously-selected rep if it still fits in the new
-    // range; otherwise default to the target (repMax).
+    
     const prev = parseInt(row.dataset.value, 10);
-    const active = (prev >= repMin && prev <= end) ? prev : repMax;
+    const active = (prev >= 5 && prev <= 9) ? prev : 8;
 
     let html = '';
-    for (let i = repMin; i <= end; i++) {
+    [5, 6, 7, 8, 9].forEach(i => {
       html += '<button type="button" class="po-reps-pill' +
         (i === active ? ' active' : '') +
         '" data-v="' + i + '">' + i + '</button>';
-    }
+    });
+    html += '<button type="button" class="po-reps-pill po-reps-custom' +
+      (prev > 9 || prev < 5 ? ' active' : '') +
+      '" data-v="custom">?</button>';
+    
     row.innerHTML = html;
     row.dataset.value = String(active);
   }
@@ -2267,9 +2582,22 @@ img, video, canvas, svg { max-width: 100%; }
   $('repsRow').addEventListener('click', (e) => {
     const p = e.target.closest('.po-reps-pill');
     if (!p) return;
+    if (p.dataset.v === 'custom') {
+      const custom = prompt('Enter rep count:');
+      if (custom === null) return;
+      const num = parseInt(custom, 10);
+      if (isNaN(num) || num < 1) { alert('Enter a valid number.'); return; }
+      $('repsRow').querySelectorAll('.po-reps-pill').forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      $('repsRow').dataset.value = String(num);
+      p.textContent = num;
+      return;
+    }
     $('repsRow').querySelectorAll('.po-reps-pill').forEach(x => x.classList.remove('active'));
     p.classList.add('active');
     $('repsRow').dataset.value = p.dataset.v;
+    const customBtn = $('repsRow').querySelector('.po-reps-custom');
+    if (customBtn) customBtn.textContent = '?';
   });
   $('logBtn').addEventListener('click', () => {
     const ex = getCurrentEx();
@@ -2505,6 +2833,10 @@ img, video, canvas, svg { max-width: 100%; }
     $('setUnitsSeg').querySelectorAll('button').forEach(b => {
       b.classList.toggle('active', b.dataset.u === state.units);
     });
+    $('setBodyWeightUnit').textContent = state.units;
+    $('setBodyWeight').value = state.bodyStats.weight || '';
+    $('setBodyHeight').value = state.bodyStats.height || '';
+    $('setBodySex').value = state.bodyStats.sex || 'm';
     $('setGyms').innerHTML = state.gyms.map((g, i) =>
       '<div class="po-set-row" data-i="' + i + '">'
       + '<input type="text" value="' + escape(g.name) + '" data-field="name" placeholder="Gym name">'
@@ -2559,8 +2891,21 @@ img, video, canvas, svg { max-width: 100%; }
       state.units = b.dataset.u; saveState();
       $('setUnitsSeg').querySelectorAll('button').forEach(x => x.classList.remove('active'));
       b.classList.add('active');
+      $('setBodyWeightUnit').textContent = state.units;
       if (typeof wtRender === 'function') wtRender();
     });
+  });
+  $('setSaveBodyStats').addEventListener('click', () => {
+    const w = parseFloat($('setBodyWeight').value);
+    const h = parseFloat($('setBodyHeight').value);
+    const s = $('setBodySex').value;
+    state.bodyStats.weight = isNaN(w) ? null : w;
+    state.bodyStats.height = isNaN(h) ? null : h;
+    state.bodyStats.sex = s || 'm';
+    saveState();
+    if (typeof wtRender === 'function') wtRender();
+    $('setSaveBodyStats').textContent = 'Saved!';
+    setTimeout(() => { $('setSaveBodyStats').textContent = 'Save body stats'; }, 1500);
   });
   $('setAddGym').addEventListener('click', () => {
     const name = (prompt('New gym name:') || '').trim();
@@ -2658,6 +3003,10 @@ img, video, canvas, svg { max-width: 100%; }
     if (existing) existing.weight = weight;
     else { wtEntries.push({ dateKey: key, weight }); wtEntries.sort((a,b) => a.dateKey.localeCompare(b.dateKey)); }
     wtSave(wtEntries);
+    if (!state.bodyStats.weight || weight > state.bodyStats.weight) {
+      state.bodyStats.weight = weight;
+      saveState();
+    }
     wtRender();
   }
 
@@ -2944,6 +3293,40 @@ img, video, canvas, svg { max-width: 100%; }
     const todayEntry = wtEntries.find(e => e.dateKey === wtDateKey(new Date()));
     if (todayEntry) $('wtInput').value = todayEntry.weight.toFixed(1);
     $('wtInput').focus(); $('wtInput').select();
+  });
+
+  // ============================================================
+  // HEIGHT TRACKER
+  // ============================================================
+  function htRender() {
+    const h = state.bodyStats.height;
+    if (h && h > 0) {
+      $('htNum').textContent = h;
+      $('htEmpty').style.display = 'none';
+      $('htEditBtn').style.display = '';
+      $('htInputRow').style.display = 'none';
+    } else {
+      $('htNum').textContent = '—';
+      $('htEmpty').style.display = '';
+      $('htEditBtn').style.display = 'none';
+      $('htInputRow').style.display = 'none';
+    }
+  }
+  $('htEditBtn').addEventListener('click', () => {
+    $('htEditBtn').style.display = 'none';
+    $('htInputRow').style.display = '';
+    $('htInput').value = state.bodyStats.height || '';
+    $('htInput').focus(); $('htInput').select();
+  });
+  $('htSaveBtn').addEventListener('click', () => {
+    const v = parseFloat($('htInput').value);
+    if (isNaN(v) || v <= 0) return;
+    state.bodyStats.height = v;
+    saveState();
+    htRender();
+  });
+  $('htInput').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') $('htSaveBtn').click();
   });
 
   // ============================================================
@@ -3282,6 +3665,7 @@ img, video, canvas, svg { max-width: 100%; }
   // ============================================================
   renderAll();
   wtRender();
+  htRender();
   photosRender();
 
   // ============================================================
